@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+
+    {{> iphone_meta}}
+
+    <link rel="stylesheet" href="{{assetBasePath}}/css/index.css">
+  </head>
+  <body>
+
+    {{{body}}}
+
+  <script src="{{assetBasePath}}/js/vendor/requirejs/require.js"></script>
+  <script>
+    /*global requirejs*/
+    requirejs.config({
+      baseUrl: '{{assetBasePath}}/js',
+      paths: {
+        jquery: 'vendor/jquery/jquery',
+        hbs: 'vendor/require-handlebars-plugin/hbs'
+      },
+      hbs: { // optional
+        partialsUrl: '/templates/partials'
+      },
+      shim: {
+        jquery: {
+          exports: '$'
+        }
+      }
+    });
+
+    requirejs(['src/app'],
+      function (app) {
+        app.init();
+      }
+    );
+  </script>
+
+  </body>
+</html>

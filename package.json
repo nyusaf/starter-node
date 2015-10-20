@@ -1,0 +1,41 @@
+{
+  "name": "name",
+  "version": "0.1.0",
+  "description": "description",
+  "main": "server.js",
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp",
+    "prod": "export NODE_ENV=production; npm start;"
+  },
+  "keywords": [
+  ],
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "author": "NY",
+  "license": "MIT",
+  "devDependencies": {
+    "debug": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-util": "^3.0.6",
+    "less-plugin-clean-css": "^1.5.1",
+    "require-dir": "^0.3.0",
+    "requirejs": "^2.1.20"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "chalk": "^1.1.1",
+    "express": "^4.13.3",
+    "hbs": "^3.1.1",
+    "lodash.assign": "^3.2.0",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.6.1",
+    "q": "^1.4.1",
+    "request": "^2.65.0"
+  }
+}

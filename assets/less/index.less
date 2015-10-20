@@ -1,0 +1,17 @@
+@import (inline) "vendor/normalize.css/normalize.css";
+@import "typography.less";
+@import "helpers.less";
+@import "header.less";
+
+body {
+  color: #383838;
+  font-family: sans-serif;
+
+  a {
+    color: @accent;
+
+    &:hover {
+      color: @accentHover;
+    }
+  }
+}

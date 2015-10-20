@@ -1,0 +1,86 @@
+@accent: #00adfd;
+@accentHover: #009be3;
+
+// h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.hide-text {
+  text-indent: -9999px;
+}
+
+.browser-prefix(@prop, @args) {
+  -webkit-@{prop}: @args;
+  -moz-@{prop}: @args;
+  -ms-@{prop}: @args;
+  -o-@{prop}: @args;
+  @{prop}: @args;
+}
+
+// @options: border-box, padding-box, content-box
+.background-clip(@mode: border-box) {
+  .browser-prefix(background-clip, @mode);
+}
+
+.blur(@radius: 0) {
+  .browser-prefix(filter, blur(@radius));
+}
+
+.border-radius(@radius: 0) {
+  .background-clip();
+  .browser-prefix(border-radius, @radius);
+}
+
+// @options: border-box, content-box, inherit
+.box-sizing(@mode: border-box) {
+  .browser-prefix(box-sizing, @mode);
+}
+
+.opacity(@opacity: 100) {
+  .browser-prefix(opacity, @opacity / 100);
+}
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+      -ms-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  .border-radius(6px);
+  .box-sizing(content-box);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  letter-spacing: 0.4px;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  overflow: visible;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.form-error {
+  color: red;
+  display: none;
+  font-size: 13px;
+}
+
